@@ -1,12 +1,14 @@
-import React from 'react'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import ProjectsList from './components/projects/ProjectsList'
 
 function App() {
   return (
-    <div className="flex h-screen w-screen items-center justify-center">
-      <div className="flex h-[30rem] w-[30rem] items-center justify-center rounded-lg bg-red-500">
-        <p className="w-fit text-xl text-white">123123123</p>
-      </div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Navigate to="/projects" replace />} path="/" />
+        <Route element={<ProjectsList />} path="/projects" />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
